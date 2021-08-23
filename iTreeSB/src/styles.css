@@ -1,1 +1,341 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Raleway-Light', serif;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+.loader-hidden {
+    visibility: hidden;
+}
+.loader-container, .loader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 500000;
+}
+
+.loader-overlay.dimmed {
+    background-color: grey;
+    opacity: 0.1;
+}
+
+.spinner-text {
+    position: absolute;
+    z-index: 500001 !important;
+    top: 25%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+}
+.p-progress-spinner {
+    position: absolute;
+    z-index: 500001 !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+
+
+}
+
+.p-progress-spinner-svg {
+    width: 5em;
+    opacity: 1.0 !important;
+}
+
+.p-progress-spinner-circle {
+    color: #064a65;
+    opacity: 1.0 !important;
+    z-index: 500001;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.invalid-feedback {
+    font-size: 0.75rem;
+    color: #a94442;
+    padding-top: 5px;
+}
+
+body {
+    @apply text-black-2
+}
+
+button {
+    @apply bg-green-1 border-2 border-green-1 text-white-1 py-2 px-6 rounded-md w-full md:w-max mb-4;
+}
+
+button.gray {
+    @apply bg-gray-100 border-2 border-green-1 text-green-1 py-2 px-6 rounded-md w-full md:w-max mb-4;
+}
+
+button.red {
+    @apply border-2 bg-white-1 border-red-1 text-red-1 py-2 px-6 rounded-md w-full md:w-max mb-4;
+}
+
+button.white {
+    @apply border-2 bg-white-1 border-green-1 text-green-1 py-2 px-6 rounded-md w-full md:w-max mb-4;
+}
+
+button.blue-button {
+    @apply bg-blue-dark border-blue-dark;
+}
+
+button:hover {
+    @apply shadow;
+}
+
+button.hollow {
+    @apply bg-white-1 text-green-1 border border-green-1;
+}
+
+button.blue-button.hollow {
+    @apply text-blue-dark border-blue-dark;
+}
+
+button:focus {
+    @apply outline-none;
+}
+
+a {
+    @apply text-green-1 underline hover:text-green-hover cursor-pointer;
+}
+
+a.blue {
+    @apply text-grey-2 hover:text-blue-dark;
+}
+
+textArea,
+input {
+    @apply w-full border border-grey-1 rounded-md py-2 px-4;
+}
+
+.active:not(.custom-nav) {
+    @apply bg-green-2;
+}
+
+.active.custom-nav > div {
+    @apply bg-opacity-80;
+}
+
+:focus {
+    @apply outline-none;
+}
+
+.p-datatable .p-datatable-tbody > tr.row-bolded{
+    @apply font-bold;
+}
+
+fieldset {
+    @apply my-4;
+}
+
+label{
+    @apply text-grey-2
+}
+
+.p-dropdown {
+    @apply my-0;
+}
+
+.p-dropdown .p-dropdown-clear-icon {
+    @apply text-green-1;
+}
+
+input[readonly]
+{ 
+    @apply text-grey-2;
+}
+
+.p-button-label {
+    @apply text-green-1;
+}
+
+.p-button.p-button-text:enabled:hover {
+    @apply shadow-none bg-white-1 text-green-hover font-medium;
+}
+
+router-outlet + * {
+    @apply w-full;
+}
+
+.p-datatable .p-paginator-bottom {
+    @apply flex-nowrap pt-6;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    @apply bg-green-1 border-green-1;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page,
+.p-paginator .p-paginator-first, .p-paginator .p-paginator-prev, .p-paginator .p-paginator-next, .p-paginator .p-paginator-last {
+    @apply text-green-1;
+}
+.p-inputnumber {
+     @apply w-full;
+}
+.p-inputnumber-input:disabled
+{ 
+    @apply text-grey-2;
+}
+.p-dropdown:disabled
+{ 
+    @apply text-grey-2;
+}
+.p-dropdown:disabled .p-dropdown-trigger
+{
+ @apply text-grey-2;
+}
+.border-b-t > .p-datatable .p-datatable-tbody > tr 
+{
+ @apply  border-t-2 border-b-2;
+}
+
+.p-datatable .p-datatable-tbody > tr 
+{
+    @apply border-b border-t;
+}
+
+.edit-page > form   {
+ @apply  mx-auto my-5 w-full; 
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+    @apply  border-0 border-t text-green-2;
+}
+
+.p-datatable .p-datatable-thead > tr > th.blue {
+    @apply text-blue-dark;
+}
+
+.p-datatable .p-sortable-column.p-highlight,
+.p-datatable .p-sortable-column.p-highlight:hover,
+.p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
+    @apply text-green-hover;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+    @apply text-green-2;
+}
+
+.p-column-title {
+    @apply text-green-hover w-full;
+}
+
+app-content-box .p-datatable.p-datatable-responsive .p-datatable-tbody>tr>td .p-column-title {
+    @apply font-medium;
+}
+
+.blue > td > .p-column-title {
+    @apply text-blue-main;
+}
+
+.custom-header-left > .p-datatable .p-datatable-header {
+    @apply bg-white-1 border-0 flex justify-end;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+    @apply border border-green-1 bg-green-1;
+}
+
+.p-datatable .p-datatable-tbody > tr > td.empty-message {
+    @apply text-center text-grey-2;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+    @apply py-2 sm:py-4;
+}
+
+.p-button.p-component.p-ripple.ng-star-inserted.p-highlight{
+    @apply bg-green-1;
+}
+.p-selectbutton > .p-button.p-component.p-highlight{
+    @apply bg-green-1 ;
+}
+.p-selectbutton > .p-button.p-component.p-highlight > .p-button-label{ 
+    @apply text-white-1 px-5;
+}
+
+.p-selectbutton > .p-button.p-component{
+    @apply bg-white-1;
+}
+.p-selectbutton > .p-button.p-component > .p-button-label{ 
+    @apply text-green-1 px-4; 
+}
+
+.p-button.p-component.p-ripple.ng-star-inserted { 
+    @apply border-t-0 border-r-0 border-l-0  border-b border-green-1 rounded-none;
+}
+
+.p-dialog-footer > .p-button:hover {
+    @apply bg-green-1;
+}
+
+.p-dialog-footer > .p-button > .p-button-icon {
+    @apply text-green-1;
+}
+
+.p-dialog-footer > .p-button:hover > .p-button-icon {
+    @apply text-white-1;
+}
+
+.p-dialog-footer > .p-button:hover > .p-button-label {
+    @apply text-white-1;
+}
+.p-dialog-title {
+    @apply text-green-1;
+}
+.p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
+    @apply bg-green-1 border-green-1;
+}
+
+.p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover > .p-button-label {
+    @apply text-white-1;
+}
+
+.p-button:enabled:hover.exportButton {
+        @apply bg-green-hover;
+}
+
+.p-button.p-button-icon-only.exportButton {
+       @apply bg-green-1 w-40;
+}
+
+.p-dialog {
+    @apply max-w-2xl;
+}
+
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    @apply border-green-1 bg-green-1;
+}
+
+
+.p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
+    @apply w-64;
+}
+
+.custom-toast > .p-toast {
+    @apply w-96 ml-negative48;
+}
+
+.p-dialog .p-dialog-header-icons {
+    @apply ml-4;
+}
